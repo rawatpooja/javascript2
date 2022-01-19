@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+      <script>
+            //array is a speical data structure to store order collections
+            //decleration
+            //let arr= new Array();
+            // let arr=[];
+            let fruits=["apple","banana",'orange']
+            fruits[2]="pear";
+            fruits[3]="lemon";
+            console.log(fruits);
+            console.log(fruits[0]);
+            console.log(fruits[1]);
+            console.log(fruits[2]);
+            console.log(fruits.length);
+            let array=["apple",{name:"pooja"},true,function(){return ("hi pooja")}]
+            console.log(array);
+            console.log(array[1].name);
+            console.log(array[3]());
+            //pop() and push()
+            let fruit=["apple","banana","orange","grapes"];
+            console.log(fruit);
+            console.log(fruit.pop());
+            console.log(fruit);
+            fruit.push("pear");
+            console.log(fruit);
+            //shift() and unshift()
+            let fru=["apple","grapes","banana","orange"];
+            console.log(fru);
+            console.log(fru.shift());
+            console.log(fru);
+            fru.unshift("pear");
+            console.log(fru);
+            let cars=["bmw"];
+            let arr=cars;
+            console.log(arr);
+            console.log(arr==cars);
+            arr.push("scorpio");
+            console.log(arr);
+            let arr1=["car","bike","cycle"];
+            for(let i=0;i<arr1.length;i++){
+                console.log(arr1[i]);
+            }
+            let ft=["apple","mango","orange"]
+            for(let fts of ft){
+                console.log(ft)
+                console.log(fts)
+            }
+            let fts=["fyh","rdt","trc"]
+            for(let key in fts){
+                console.log(fts[key])
+            }
+            let fu=[];
+            fu[123]="apple"
+            console.log(fu.length);
+            let fui=[1,2,5,6,8]
+            fui.length=4;
+            console.log(fui);
+            //new array
+            let arr2=new Array(2);
+            console.log(arr2[0]);
+            console.log(arr2.length);
+            //multidimensional array
+            let matrix=[
+                [1,2,3],
+                [4,5,6],
+                [7,8,9],
+            ]
+            console.log(matrix[1][0]);
+            let arrr=[1,2,3]
+            console.log(arrr)
+            console.log(String(arrr)==="1,2,3")
+            //array methods
+            //splice
+            let ar=["i","go","homme","you","come","with","me"]
+            delete ar[1];
+            ar.splice(0,3,"i","dont","go");
+            console.log(ar)
+            //slice
+            let ar1=["t","e","s","t"]
+            console.log(ar1.slice(1,3))
+            let aar=[1,2]
+            console.log(aar.concat([3,4],[1,2]));
+            let aww=[1,2]
+            let arrayLike={
+                0:"something",
+                length:1
+            };
+            console.log(aww.concat(arrayLike));//concat the object
+            let awww=[1,2]
+            let arrayLikee={
+                0:"something",
+                1:"else",
+                [Symbol.isConcatSpreadable]: true,//with this is behave as an array by cancat
+                length:2
+            };
+            console.log(awww.concat(arrayLikee));
+            //foreach
+           // ["sachin","rahul","komal"].forEach(console.log)
+            ["sachin","pankaj","komal"].forEach((item,index,array)=>{
+                console.log(`${item} is the index ${index} in ${array}`);
+            });
+            let users=[
+               { id:1,name:"john"},
+                {id:2,name:"jolly"},
+                {id:3,name:"dolly"},
+        ]
+            let user=users.find(item=>item.id==3);
+            console.log(user.name)//find method usedfor single elemtent
+            //filter used for many element and it returns array of matching element
+            let userr=users.filter(item=>item.id<3);
+            console.log(userr.length)
+            //map
+            let lengths=["yh","rerdee","tfg"].map(item=>item.length)
+            console.log(lengths)
+            //sort changing the element order it return the sorted array
+            let arra=[1,56,3]
+            arra.sort();
+            console.log(arra)
+            let countries=["india","canada","usa","uk"];
+            console.log(countries.sort((a,b)=>a>b ?1:-1))
+            //reverse
+            let num=[1,2,3,4,5]
+            num.reverse();
+            console.log(num);
+            let name="pooja,suman,anjali"
+            let ar2=name.split(' , ')
+            for(let name of ar2){
+                console.log(`a message ${name}`)
+            }
+            let nums=[1,2,3,4,5]
+            let result=nums.reduce((sum,current)=>sum+current,0);
+            console.log(result)
+            //typeof doesnot distinugish plain obj from an array so used the arrayisarray method 
+            console.log(Array.isArray({}));
+            console.log(Array.isArray([]));
+     </script>
+     
+   </body>
+</html>

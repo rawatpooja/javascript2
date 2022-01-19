@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+        //string is iterable
+        for(let char of "text"){
+            console.log(char)
+        }
+        for (const x of [1,2,3,4,5]){
+            console.log(x)
+        }
+        let arrayLike={
+            0:"hello",
+            1:"pooja",
+            length:2
+        }
+        let ry=Array.from(arrayLike);
+        console.log(ry.pop())
+        const myIterable={}
+        myIterable[Symbol.iterator]=function*(){
+            yield 1;
+            yield 2;
+            yield 3;
+        };
+        console.log([...myIterable]);
+       //Map and set map is collection of keyed data items like obj but map allows any type of key
+        let map=new Map()
+        map.set('1','str1');
+        map.set(1,'num1');
+        map.set(true,'booln1');
+        console.log(map.get(1));
+        console.log(map.get('1'));
+        console.log(map.size);
+        //map can use objs as keys
+        let john={name:"john"}
+        let visitCountMap=new Map()
+        visitCountMap.set(john,123)
+        console.log(visitCountMap.get(john));
+        let john1={name:"john"};
+        let ben={name:"ben"};
+        let visitCountObj={}
+        visitCountObj[ben]=123;
+        visitCountObj[john1]=345;
+        console.log(visitCountObj["[object Object]"])
+        //iteration over map :3 methods-ma.key,map.value,map.enteries
+        let recipeMap=new Map([
+            ['carrot',400],
+            ['tomato',300],
+            ['potato',100]
+        ])
+        for(let vegetable of recipeMap.keys()){
+            console.log(vegetable)
+        }
+        for(let amount of recipeMap.values()){
+            console.log(amount)
+        }
+        for(let entry of recipeMap){
+            console.log(entry)
+        }
+        recipeMap.forEach((value,key,Map)=>{
+            console.log(`${key}:${value}`)
+        })
+        let map2= new Map();
+        map2.set('bar','zoo')
+        console.log(map2.get('bar'));
+        console.log(map2.get('baz'))
+        let myMap= new Map();
+        //add the new elemnt to the map
+        myMap.set('bar','baz');
+        myMap.set(1,'foobar');
+        //to update
+        myMap.set('bar','zoo');
+        let mmap=new Map();
+        mmap.set(1,'js');
+        mmap.set(2,'react');
+        mmap.set(3,'java');
+        console.log(mmap.get(1))
+        console.log(mmap.get(2))
+        console.log(mmap.get(3))
+        let maap=new Map();
+        maap.set(1,'javascript');
+        maap.set(1,'php');
+        maap.set(3,'python')
+        console.log(maap.get(1));
+        console.log(maap.get(1));
+        console.log(maap.get(3));
+        //object.entries(obj)...if we have plain obj then we create a Map from it we use built in method
+        //Object.entries that returns an array key/value pair for an object exactly in that format
+        let obj={
+            name:"john",
+            age:23
+        }
+        let map1=new Map(Object.entries(obj))
+        console.log(map1.get('name'))
+        //object.fromenteries do reverse of object.enteries
+        let price=Object.fromEntries([
+            ['name',5],
+            ['orange',6],
+            ['banana',8]
+        ]);
+        console.log(price.orange)
+        let mapp=new Map();
+        mapp.set('banana',5);
+        mapp.set('orange',4);
+        mapp.set('apple',7);
+        let objj=Object.fromEntries(mapp.entries());
+        console.log(objj.apple);
+        //set is a sepical type collection set of values without keys
+        let set= new Set();
+        let johnn={name:"johnn"};
+        let petre={name:"petre"};
+        let merry={name:"merry"};
+        set.add(johnn);
+        set.add(petre);
+        set.add(merry);
+        set.add(petre);
+        set.add(merry);
+        console.log(set.size);
+        for (let user of set){
+            console.log(user.name)
+        }
+        //iteration over set
+        let sett= new Set(["aman","raman","pawan"]);
+        for(let value of sett){
+            console.log(value)
+        }
+        sett.forEach((value,valueAgain,set)=>{
+            console.log(value)
+        })
+        let s=new Set([1,2,3])
+        console.log(s.values())
+        const uniqueArray=[...new Set([1,1,2,2,3,3])]
+        console.log(uniqueArray)
+        //weakmap and weakset
+        //first diffrence between map and weakmap is that keys must be objects not primitiv values
+        let weakMap=new WeakMap();
+        let obbj={}
+        weakMap.set(obj,"ok");
+        weakMap.set("test","whoops")
+
+        </script>
+    </body>
+</html>

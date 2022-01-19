@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            //objects.kets,values,entries
+            let user={
+                name:"pooja",
+                age:23
+            }
+            for(let value of Object.values(user)){
+                console.log(value)
+            }
+            let price={
+                apple:1,
+                grapes:2,
+                meat:3
+            }
+            let doublePrice=Object.fromEntries(
+                Object.entries(price).map(entry=>[entry[0],entry[1]*2])
+            );
+            console.log(doublePrice.meat
+            )
+            //data destructing
+            let [firstName,surName]="pooja rawat".split(' ');
+            console.log(firstName)
+            console.log(surName)
+            let [firstname, , title]= ["trtfg", "ryt", "tytg", "tyg ghgt rtg tuy"]
+            console.log(firstname)
+            let users={};
+            [users.name,users.surname]="john smith".split(' ');
+            console.log(users.name);
+            console.log(users.surname);
+            let user1={
+                name:"john",
+                age:30
+            }
+            for(let[key,value] of Object.entries(user1)){
+                console.log(`${key} :${value}`)
+            }
+            let u=new Map();
+            u.set("name","john");
+            u.set("age",30);
+            for(let [key,value] of u){
+                console.log(`${key}:${value}`)
+            }
+            //swap variables using desrutucting
+            let guest="jane";
+            let admin="petre";
+            [guest,admin]=[admin,guest]
+            console.log(`${guest}:${admin}`)
+            //the rest...
+            let[namee1,namee2]=["cgfg","ttfcv","tvgf","trt ytyg uyjh"]
+            console.log(namee1)
+            console.log(namee2)//rest items not assigned anywhere
+            let[name1,name2,...rest]=["uyu","gddt","utyt","trtr yt uh"]
+             console.log(rest[0]);
+             console.log(rest[1]);
+             console.log(rest.length);
+             let [fname,lname]=[];
+             console.log(fname);
+             console.log(lname);
+             //default values
+             let [finame="guest", laname="anonymous"]=[,"julius"]
+             console.log(finame)
+             console.log(laname)
+             //object destructing
+             let options={
+                 titlee:"hello",
+                 width:100,
+                 height:100
+             }
+             let {titlee,width,height}=options;
+             console.log(titlee);
+             console.log(width);
+             console.log(height);
+             let option={
+                 titllee:"hello",
+                 width:200,
+                 height:300
+             }
+             let {titllee,width:w,height:h}=option;
+             console.log(w)
+             console.log(h)
+             let optionn={
+                 size:{
+                     widthh:260,
+                     heightt:390
+                 },
+                 items:["ttry","ytyg"],
+                 extra:true,
+             }
+             let{
+                 size:{
+                     widthh,
+                     heightt
+                 },
+                 items:[item1,item2],
+                 titl="menu"
+             }=optionn;
+             console.log(widthh);
+             console.log(heightt);
+             console.log(item1);
+             console.log(item2)
+             //date
+             let date=new Date();
+             console.log(date)
+             let date1=new Date(0);
+             console.log(date1);
+             let date2=new Date(24*3600*1000);
+             console.log(date2)
+             let date3=new Date(-24*3600*1000);
+             console.log(date3)
+             let date4=new Date("2017-01-26");
+             console.log(date4)//datestring
+             //newdate
+             let date5=new Date(2022,0,19,0,0,0,0);
+             console.log(date5)
+             //access date components-getfullyear,getmonth,getdate,gethoours,getmins,getsec,getms,getday
+             console.log(new Date().getTimezoneOffset());
+             let today=new Date();
+             today.setHours(0);
+             console.log(today)
+             let date6=new Date(2013,0,32);
+             console.log(date6)
+             let date7=new Date(2016,1,28);
+             date7.setDate(date7.getDate()+2);
+             console.log(date7)
+             let date8=new Date();
+             date8.setSeconds(date8.getSeconds()+70);
+             console.log(date8)
+             let date9=new Date(2016,0,2);
+             date9.setDate(1);
+             console.log(date9);
+             date9.setDate(0);
+             console.log(date9)
+             //date objectis converted to number and it becomesthe timestamp same as date.gettime
+             let dat=new Date()
+             console.log(+dat)
+             //date can be subtracked their diff in ms
+             let start=new Date();
+             for(let i=0;i<100000;i++){
+                 let doSomething=i*i*i;
+             }
+             let end=new Date();
+             console.log(`the loop took ${end-start} in ms`)
+             // if only want mearure time no need the date object so used the date.now
+             let startt=Date.now();
+             for(let i=0;i<100000;i++){
+                 let doSomething=i*i*i
+             }
+             let endd=Date.now();
+             console.log(` the loop took ${endd-startt} ms`)
+             let ms = Date.parse('2012-01-26T13:51:50.417-07:00');
+             console.log(ms);
+             let datee = new Date( Date.parse('2012-01-26T13:51:50.417-07:00') );
+             console.log(datee);
+             
+
+        </script>
+    </body>
+</html>
